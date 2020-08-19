@@ -7,10 +7,5 @@ RUN apk add --no-cache \
     && npm install --no-optional -g \
     hexo-cli
 
-
-#EXPOSE 4000
 COPY startup.sh /startup.sh
-#ENTRYPOINT ["/entorypoint.sh"]
-#CMD ["/bin/sh"]
-#CMD ["/bin/sh","-c","hexo server"]
 CMD ["/startup.sh"]
