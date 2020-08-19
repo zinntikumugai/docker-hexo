@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  hexo:
+    container_name: hexo
+    build: ${PWD}/docker/hexo
+    ports:
+      - 4000:4000
+    volumes:
+      - ${PWD}/blog:/blog
+    tty: true
