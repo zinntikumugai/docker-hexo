@@ -1,11 +1,12 @@
-FROM node:14.8.0-alpine
-
-WORKDIR /blog
+FROM node:14-alpine3.12
 
 RUN apk add --no-cache \
     git \
+    bash \
     && npm install --no-optional -g \
     hexo-cli
 
 COPY startup.sh /startup.sh
-CMD ["/startup.sh"]
+
+WORKDIR /blog
+CMD ["/bin/bash","/startup.sh"]
